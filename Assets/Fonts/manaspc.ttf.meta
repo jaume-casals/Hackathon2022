@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f02c97fb806d7c8da952308eb4ccb19e
+guid: 64350385dd8280dbfb70281fd89771f8
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - '? Systematic TT (BRK)'
+  - Manaspace
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
