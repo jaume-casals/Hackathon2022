@@ -88,6 +88,6 @@ public class matrix : MonoBehaviour
 
     public Vector2 getRealPos(Vector2 pos, float size_blockX, float size_blockY) {
         Vector2 norm = new Vector2((int) ((pos.x - iniPos.x) / size_blockX), (int) ((pos.y - iniPos.y) / size_blockY));
-        return new Vector2(norm.x * size_blockX, norm * size_blockY);
+        return new Vector2(norm.x * size_blockX, norm.y * size_blockY);
     }
 }
