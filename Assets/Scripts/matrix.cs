@@ -33,7 +33,7 @@ public class matrix : MonoBehaviour
     }
 
     //returns -1 if the nearest hole is left, if it is right, 0 if there's no hole
-    public int searchNearbyHole(int x, int y) {
+    public int searchNearbyHoleDownwards(int x, int y) {
         if (y == 0) return 0;
         int left, right;
         left = x - 1;
@@ -52,6 +52,31 @@ public class matrix : MonoBehaviour
         }
         while (right < size) {
             if (map[right, y - 1] == "empty") return 1;
+            right++;
+        }
+
+        return 0;
+    }
+
+    public int searchNearbyHoleUpwards(int x, int y) {
+        if (y == 49) return 0;
+        int left, right;
+        left = x - 1;
+        right = x + 1;
+
+        while (left >= 0 && right < size) {
+            if (map[left, y + 1] == "empty") return -1;
+            if (map[right, y + 1] == "empty") return 1;
+            right++;
+            left--;
+        }
+
+        while (left >= 0) {
+            if (map[left, y + 1] == "empty") return -1;
+            left--;
+        }
+        while (right < size) {
+            if (map[right, y + 1] == "empty") return 1;
             right++;
         }
 
