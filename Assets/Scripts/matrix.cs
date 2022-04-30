@@ -12,7 +12,7 @@ public class matrix : MonoBehaviour
   // Start is called before the first frame update
     void Start()
     {
-        map = new string[sizeY, sizeX];
+        map = new string[sizeX, sizeY];
         for (int i = 0; i < sizeX; ++i) {
             for (int j = 0; j < sizeY; ++j) map[i, j] = "empty";
         }
@@ -32,7 +32,7 @@ public class matrix : MonoBehaviour
     }
 
     public void setPos(Vector2 pos, float size_blockX, float size_blockY, string type) {
-        map[(int) (size_blockX * (pos.x - iniPos.x)), (int) (size_blockY * (pos.y - iniPos.y))] = type;
+        map[(int) ((pos.x - iniPos.x) / size_blockX), (int) ((pos.y - iniPos.y) / size_blockY)] = type;
     }
 
     //returns -1 if the nearest hole is left, if it is right, 0 if there's no hole
@@ -87,6 +87,7 @@ public class matrix : MonoBehaviour
     }
 
     public Vector2 getRealPos(Vector2 pos, float size_blockX, float size_blockY) {
-        return new Vector2((int) (size_blockX * (pos.x - iniPos.x)), (int) (size_blockY * (pos.y - iniPos.y)));
+        Vector2 norm = new Vector2((int) ((pos.x - iniPos.x) / size_blockX), (int) ((pos.y - iniPos.y) / size_blockY));
+        return new Vector2(norm.x * size_blockX, norm * size_blockY);
     }
 }

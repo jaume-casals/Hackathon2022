@@ -25,7 +25,7 @@ public class CollisionWater : MonoBehaviour
             block_script.EnemyHit();
         }
         else
-        {    
+        {
             block_script.IsColliding(true);
         }
     }
