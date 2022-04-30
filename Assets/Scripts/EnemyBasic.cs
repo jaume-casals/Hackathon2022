@@ -65,6 +65,12 @@ public class EnemyBasic : MonoBehaviour
             else //he attac
             {
                 blocksHit.Add(col.gameObject);
+                int dmg = col.gameObject.GetComponent<Particle>().GetDmg();
+                print(dmg);
+                //and he get hit
+                hp = hp- dmg;
+                if (hp <= 0)
+                    Die();
             }
         }
         

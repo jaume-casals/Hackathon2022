@@ -6,7 +6,6 @@ public class TestSandGenerator : MonoBehaviour
 {
     public GameObject SandBlock;
     public float space = 0;
-    public GameObject MatrixGameObject;
 
     // Start is called before the first frame update
     void Start()
@@ -19,10 +18,7 @@ public class TestSandGenerator : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Vector2 pos = MatrixGameObject.GetComponent<matrix>().getRealPos(transform.position, 0.08f);
-            Instantiate(SandBlock, pos, transform.rotation);
-            SandBlock.GetComponent<Particle>().MatrixGameObject = MatrixGameObject;
-            SandBlock.GetComponent<Particle>().isSand = true;
+            Instantiate(SandBlock, transform.position, transform.rotation);
         }
 
         if (Input.GetKeyDown(KeyCode.LeftArrow))
