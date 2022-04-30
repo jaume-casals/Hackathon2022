@@ -1078,10 +1078,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7130b7a965889d339ed3509d2363a3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particle: {fileID: 8828774465809153911, guid: d86851b8344f5812f8d7da3e4ada658b, type: 3}
+  sand: {fileID: 727715984963740857, guid: de2d0eca5e1d5963ea033911c9070af9, type: 3}
+  lava: {fileID: 3790949050811963071, guid: aa4ec54e0dbc28a6c81b04b13e178731, type: 3}
   storageSystem: {fileID: 1949362022}
   speed: 20
-  matrix: {fileID: 0}
 --- !u!4 &1038056483
 Transform:
   m_ObjectHideFlags: 0
@@ -1409,7 +1409,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1761903559
 Transform:
   m_ObjectHideFlags: 0
@@ -1437,7 +1437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43009cc652827fa7cb713ad17ca9a30d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zombie: {fileID: 133348966833644761, guid: 32f32d625ed2db20ba0952dbc684f261, type: 3}
+  zombie: {fileID: 3601049148563997337, guid: 29da5dc9e651daaed9fd6b65c6c10341, type: 3}
   speed: 20
 --- !u!1 &1806540373
 GameObject:
@@ -1938,6 +1938,67 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37fb11a0e91f011a9b794bf7bbcfa39c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &655889273322451182
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2669782055675107288, guid: 29da5dc9e651daaed9fd6b65c6c10341, type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 2669782055675107288, guid: 29da5dc9e651daaed9fd6b65c6c10341, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 2669782055675107288, guid: 29da5dc9e651daaed9fd6b65c6c10341, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 2669782055675107288, guid: 29da5dc9e651daaed9fd6b65c6c10341, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.008361383
+      objectReference: {fileID: 0}
+    - target: {fileID: 2669782055675107288, guid: 29da5dc9e651daaed9fd6b65c6c10341, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2669782055675107288, guid: 29da5dc9e651daaed9fd6b65c6c10341, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2669782055675107288, guid: 29da5dc9e651daaed9fd6b65c6c10341, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2669782055675107288, guid: 29da5dc9e651daaed9fd6b65c6c10341, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2669782055675107288, guid: 29da5dc9e651daaed9fd6b65c6c10341, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2669782055675107288, guid: 29da5dc9e651daaed9fd6b65c6c10341, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2669782055675107288, guid: 29da5dc9e651daaed9fd6b65c6c10341, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3601049148563997337, guid: 29da5dc9e651daaed9fd6b65c6c10341, type: 3}
+      propertyPath: m_Name
+      value: Dragon
+      objectReference: {fileID: 0}
+    - target: {fileID: 8611253037442277178, guid: 29da5dc9e651daaed9fd6b65c6c10341, type: 3}
+      propertyPath: speed
+      value: 40
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 29da5dc9e651daaed9fd6b65c6c10341, type: 3}
 --- !u!1001 &727715985379210883
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2005,6 +2066,10 @@ PrefabInstance:
     - target: {fileID: 133348966833644761, guid: 32f32d625ed2db20ba0952dbc684f261, type: 3}
       propertyPath: m_Name
       value: Zombie
+      objectReference: {fileID: 0}
+    - target: {fileID: 133348966833644761, guid: 32f32d625ed2db20ba0952dbc684f261, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1525673060283429272, guid: 32f32d625ed2db20ba0952dbc684f261, type: 3}
       propertyPath: m_RootOrder

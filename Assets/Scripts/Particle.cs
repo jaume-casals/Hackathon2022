@@ -122,7 +122,9 @@ public class Particle : MonoBehaviour
     */
     public bool receiveDmg(float dmg, EnemyBasic.DmgType dmgType)
     {
-        if (wet ==  0 && heat == 0 && dmgType == EnemyBasic.DmgType.Physical)
+        if (wet ==  0 && heat == 0 && (dmgType == EnemyBasic.DmgType.Physical || dmgType == EnemyBasic.DmgType.Anti_Fire))
+            health = health - (int)dmg;
+        if (heat > 0 && dmgType == EnemyBasic.DmgType.Anti_Fire)
             health = health - (int)dmg;
         if (health < 0)
         {

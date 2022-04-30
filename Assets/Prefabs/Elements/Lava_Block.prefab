@@ -128,7 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MatrixGameObject: {fileID: 0}
   name: lava
-  health: 100
+  health: 80
   heat: 100
   wet: 0
   density: 80

@@ -36,7 +36,7 @@ public class EnemyBasic : MonoBehaviour
             transform.position = new Vector2(transform.position.x-blockSize, transform.position.y);
             for (int i = 0; i < blocksHit.Count; ++i)
             {
-                if (!blocksHit[i].GetComponent<Particle>().receiveDmg(dmg, dmgType)) //enemy dies
+                if (!blocksHit[i].activeSelf || !blocksHit[i].GetComponent<Particle>().receiveDmg(dmg, dmgType)) //enemy dies
                     blocksHit.Remove(blocksHit[i]);
             }
         }
