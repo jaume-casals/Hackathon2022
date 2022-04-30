@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8828774465809153908}
   m_Layer: 0
   m_Name: Water_Block
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134,7 +134,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 1
 --- !u!114 &8828774465809153908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,11 +147,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 169355ab0b6a5ab96b161c1277a6392a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 100
   heat: 0
   wet: 0
   density: 0
   speed: 0
   gravity: 0
+  damage: 0
 --- !u!1 &8828774466301723013
 GameObject:
   m_ObjectHideFlags: 0
