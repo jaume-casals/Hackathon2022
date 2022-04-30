@@ -16,6 +16,7 @@ public class StorageSystem : MonoBehaviour
     {
         coins = 0;
         coinsText.GetComponent<Text>().text = coins.ToString();
+
         sandBlocks = 1000;
         sandcountertest.GetComponent<Text>().text = sandBlocks.ToString();
     }
