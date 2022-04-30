@@ -13,7 +13,7 @@ public class StorageSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        sandBlocks = 10;
+        sandBlocks = 1000;
         sandcountertest.GetComponent<Text>().text = sandBlocks.ToString();
     }
 
