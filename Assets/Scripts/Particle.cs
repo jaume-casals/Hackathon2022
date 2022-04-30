@@ -26,7 +26,6 @@ public class Particle : MonoBehaviour
     void Start()
     {
         fallDmgFactor = Mathf.Max(0,5*((float)(density-50)/50f)); // de 0 a 5 en funcio de la densitat
-        print(fallDmgFactor);
         iscoll = false;
         movesize = gameObject.GetComponent<SpriteRenderer>().bounds.size.x;
     }
