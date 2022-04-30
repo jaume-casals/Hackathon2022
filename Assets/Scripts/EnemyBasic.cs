@@ -73,5 +73,6 @@ public class EnemyBasic : MonoBehaviour
                     Die();
             }
         }
+        
     }
 }

@@ -7,7 +7,6 @@ TagManager:
   - Block
   - Enemy
   - StorageSystem
-  - wizard
   layers:
   - Default
   - TransparentFX
