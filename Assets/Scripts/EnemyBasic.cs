@@ -33,19 +33,27 @@ public class EnemyBasic : MonoBehaviour
     {
         if (counter++%(300/speed) == 0)
         {
+            List<GameObject> bh = new List<GameObject>();
+
             transform.position = new Vector2(transform.position.x-blockSize, transform.position.y);
             for (int i = 0; i < blocksHit.Count; ++i)
             {
-                if (!blocksHit[i].activeSelf || !blocksHit[i].GetComponent<Particle>().receiveDmg(dmg, dmgType)) //enemy dies
-                    blocksHit.Remove(blocksHit[i]);
+                if (!blocksHit[i] != null && (!blocksHit[i].activeSelf || !blocksHit[i].GetComponent<Particle>().receiveDmg(dmg, dmgType))) //enemy dies
+                {
+                    //We want to delete the ith block
+                    Destroy(blocksHit[i]);
+                }
+                else {
+                    bh.Add(blocksHit[i]);
+                }
             }
+            blocksHit = bh;
         }
     }
 
     void Die()
     {
         storageSystem.EarnCoins(coinsReward);
-        print("money?");
         Destroy(gameObject);
     }
 
@@ -57,8 +65,6 @@ public class EnemyBasic : MonoBehaviour
             if (fallDmg > 0) //we receive dmg
             {
                 hp = hp - col.gameObject.GetComponent<Particle>().FallHitDmg();
-                print("dmg =" + col.gameObject.GetComponent<Particle>().FallHitDmg());
-                print("hp =" + hp);
                 if (hp < 0)
                     Die();
             }
@@ -66,7 +72,6 @@ public class EnemyBasic : MonoBehaviour
             {
                 blocksHit.Add(col.gameObject);
                 int dmg = col.gameObject.GetComponent<Particle>().GetDmg();
-                print(dmg);
                 //and he get hit
                 hp = hp- dmg;
                 if (hp <= 0)

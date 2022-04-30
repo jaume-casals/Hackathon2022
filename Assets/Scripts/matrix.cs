@@ -102,12 +102,10 @@ public class matrix : MonoBehaviour
     public int searchSandHole(Vector2 pos) {
         int x = (int) ((pos.x - iniPos.x) / block_size);
         int y = (int) ((pos.y - iniPos.y) / block_size);
-        print("y");
-        print(y);
 
         if (y == 0) return 0;
         if (map[x, y-1] == "sand") {
-            print("BELOW SAND!");
+
             if (x > 0 && map[x-1, y-1] == "empty" && x < sizeX && map[x+1, y-1] == "empty") {
                 int rand = UnityEngine.Random.Range(1, 6);
                 return (int) MathF.Pow(-1, rand); //Retorna aleatoriament -1 o 1
@@ -119,7 +117,7 @@ public class matrix : MonoBehaviour
                 return 1;
             }
         }
-        print(map[x, y-1]);
+
         return 0;
     }
 

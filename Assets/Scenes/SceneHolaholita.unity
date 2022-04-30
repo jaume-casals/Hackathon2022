@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &25440569 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3601049148563997337, guid: 29da5dc9e651daaed9fd6b65c6c10341, type: 3}
+  m_PrefabInstance: {fileID: 655889273322451182}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &164751130
 GameObject:
   m_ObjectHideFlags: 0
@@ -1080,6 +1085,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sand: {fileID: 727715984963740857, guid: de2d0eca5e1d5963ea033911c9070af9, type: 3}
   lava: {fileID: 3790949050811963071, guid: aa4ec54e0dbc28a6c81b04b13e178731, type: 3}
+  stone: {fileID: 0}
   storageSystem: {fileID: 1949362022}
   speed: 20
 --- !u!4 &1038056483
@@ -1437,8 +1443,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43009cc652827fa7cb713ad17ca9a30d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zombie: {fileID: 3601049148563997337, guid: 29da5dc9e651daaed9fd6b65c6c10341, type: 3}
-  speed: 20
+  zombie: {fileID: 133348966833644761, guid: 32f32d625ed2db20ba0952dbc684f261, type: 3}
+  dragon: {fileID: 25440569}
+  SpawnRate: 5
 --- !u!1 &1806540373
 GameObject:
   m_ObjectHideFlags: 0
@@ -1692,6 +1699,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sandcountertest: {fileID: 885131607}
+  lavacountertest: {fileID: 0}
+  stonecountertest: {fileID: 0}
   coinsText: {fileID: 207393935}
 --- !u!4 &1949362024
 Transform:
@@ -1955,7 +1964,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2669782055675107288, guid: 29da5dc9e651daaed9fd6b65c6c10341, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.52
+      value: 3.52
       objectReference: {fileID: 0}
     - target: {fileID: 2669782055675107288, guid: 29da5dc9e651daaed9fd6b65c6c10341, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1996,6 +2005,10 @@ PrefabInstance:
     - target: {fileID: 8611253037442277178, guid: 29da5dc9e651daaed9fd6b65c6c10341, type: 3}
       propertyPath: speed
       value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 8611253037442277178, guid: 29da5dc9e651daaed9fd6b65c6c10341, type: 3}
+      propertyPath: coinsReward
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29da5dc9e651daaed9fd6b65c6c10341, type: 3}
@@ -2069,7 +2082,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 133348966833644761, guid: 32f32d625ed2db20ba0952dbc684f261, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1525673060283429272, guid: 32f32d625ed2db20ba0952dbc684f261, type: 3}
       propertyPath: m_RootOrder

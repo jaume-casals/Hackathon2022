@@ -51,7 +51,6 @@ public class Particle : MonoBehaviour
         }
         else if (isFluid && gravity == -1 && iscoll)
         {
-            print("moving to the side");
             int select = Random.Range(0,2);
             if (select == 0)
             {
