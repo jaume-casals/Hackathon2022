@@ -128,64 +128,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3790949050811963071, guid: aa4ec54e0dbc28a6c81b04b13e178731, type: 3}
   m_PrefabInstance: {fileID: 1390269538}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &136602713
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 136602714}
-  - component: {fileID: 136602715}
-  m_Layer: 0
-  m_Name: ColliderLeft
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &136602714
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 136602713}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1770184247}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &136602715
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 136602713}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.001, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.08, y: 0.03}
-  m_EdgeRadius: 0
 --- !u!1 &164751130
 GameObject:
   m_ObjectHideFlags: 0
@@ -336,6 +278,42 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: sand
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 823299597}
+        m_TargetAssemblyTypeName: SpriteSwap, Assembly-CSharp
+        m_MethodName: selectSprite
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1104433129}
+        m_TargetAssemblyTypeName: SpriteSwap, Assembly-CSharp
+        m_MethodName: unSelectSprite
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 724353675}
+        m_TargetAssemblyTypeName: SpriteSwap, Assembly-CSharp
+        m_MethodName: unSelectSprite
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &207393933
@@ -1046,6 +1024,7 @@ GameObject:
   - component: {fileID: 724353672}
   - component: {fileID: 724353674}
   - component: {fileID: 724353673}
+  - component: {fileID: 724353675}
   m_Layer: 5
   m_Name: BackGroundStone
   m_TagString: Untagged
@@ -1116,6 +1095,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 724353671}
   m_CullTransparentMesh: 1
+--- !u!114 &724353675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724353671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3230b2298660bf55494fa82c01d81d1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oldImage: {fileID: 724353673}
+  notSelected: {fileID: 21300000, guid: c58c18eff08c09f30b02199ff1583b45, type: 3}
+  selected: {fileID: 21300000, guid: df46084a2d019ed1fb52f0d6cfecc55a, type: 3}
 --- !u!1 &803563820
 GameObject:
   m_ObjectHideFlags: 0
@@ -1261,6 +1255,7 @@ GameObject:
   - component: {fileID: 823299594}
   - component: {fileID: 823299596}
   - component: {fileID: 823299595}
+  - component: {fileID: 823299597}
   m_Layer: 5
   m_Name: BackGroundSand
   m_TagString: Untagged
@@ -1331,6 +1326,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 823299593}
   m_CullTransparentMesh: 1
+--- !u!114 &823299597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823299593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3230b2298660bf55494fa82c01d81d1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oldImage: {fileID: 823299595}
+  notSelected: {fileID: 21300000, guid: 2d9686d001af6033f8bc454c0c5d01ed, type: 3}
+  selected: {fileID: 21300000, guid: 92118709c4faaa495a006c6f8e5702ea, type: 3}
 --- !u!1 &885131605
 GameObject:
   m_ObjectHideFlags: 0
@@ -2000,6 +2010,7 @@ GameObject:
   - component: {fileID: 1104433126}
   - component: {fileID: 1104433128}
   - component: {fileID: 1104433127}
+  - component: {fileID: 1104433129}
   m_Layer: 5
   m_Name: BackGroundLava
   m_TagString: Untagged
@@ -2070,6 +2081,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1104433125}
   m_CullTransparentMesh: 1
+--- !u!114 &1104433129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1104433125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3230b2298660bf55494fa82c01d81d1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oldImage: {fileID: 1104433127}
+  notSelected: {fileID: 21300000, guid: c58c18eff08c09f30b02199ff1583b45, type: 3}
+  selected: {fileID: 21300000, guid: df46084a2d019ed1fb52f0d6cfecc55a, type: 3}
 --- !u!1 &1107150798
 GameObject:
   m_ObjectHideFlags: 0
@@ -2220,6 +2246,42 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: lava
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1104433129}
+        m_TargetAssemblyTypeName: SpriteSwap, Assembly-CSharp
+        m_MethodName: selectSprite
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 823299597}
+        m_TargetAssemblyTypeName: SpriteSwap, Assembly-CSharp
+        m_MethodName: unSelectSprite
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 724353675}
+        m_TargetAssemblyTypeName: SpriteSwap, Assembly-CSharp
+        m_MethodName: unSelectSprite
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &1202715580
@@ -2394,6 +2456,42 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: stone
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 724353675}
+        m_TargetAssemblyTypeName: SpriteSwap, Assembly-CSharp
+        m_MethodName: selectSprite
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 823299597}
+        m_TargetAssemblyTypeName: SpriteSwap, Assembly-CSharp
+        m_MethodName: unSelectSprite
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1104433129}
+        m_TargetAssemblyTypeName: SpriteSwap, Assembly-CSharp
+        m_MethodName: unSelectSprite
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1260560107
@@ -3077,12 +3175,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zombie: {fileID: 133348966833644761, guid: 32f32d625ed2db20ba0952dbc684f261, type: 3}
-  speed: 20
---- !u!4 &1770184247 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8828774465809153909, guid: d86851b8344f5812f8d7da3e4ada658b, type: 3}
-  m_PrefabInstance: {fileID: 928950971}
-  m_PrefabAsset: {fileID: 0}
+  dragon: {fileID: 0}
+  SpawnRate: 20
 --- !u!1 &1806540373
 GameObject:
   m_ObjectHideFlags: 0
@@ -3386,64 +3480,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1878936895}
   m_CullTransparentMesh: 1
---- !u!1 &1923791571
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1923791572}
-  - component: {fileID: 1923791573}
-  m_Layer: 0
-  m_Name: ColliderRight
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1923791572
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1923791571}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1770184247}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1923791573
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1923791571}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.001, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.08, y: 0.03}
-  m_EdgeRadius: 0
 --- !u!1 &1936256555
 GameObject:
   m_ObjectHideFlags: 0
