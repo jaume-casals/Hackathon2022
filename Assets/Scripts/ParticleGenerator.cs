@@ -48,9 +48,11 @@ public class ParticleGenerator : MonoBehaviour
         if (IsMouseOverGameWindow)
         {
             worldPosition = new Vector3(((float)(((int)(worldPosition.x*100)/8)*8)/100), ((float)(((int)(worldPosition.y*100)/8)*8)/100) , worldPosition.z);
+            
+            
             if (storageSystem.GetComponent<StorageSystem>().UsedBlock(particle.GetComponent<Particle>().getName()))
             {
-                Instantiate(particle, worldPosition, transform.rotation);
+                Instantiate(particle, worldPosition, transform.rotation); 
             }
         }
     }

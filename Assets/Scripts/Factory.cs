@@ -25,7 +25,6 @@ public class Factory : MonoBehaviour
     {
         if (level > 0 && frameCounter++%(300/speed) == 0)
             storageSystem.ProducedBlock(type);
-            print(type);
     }
 
     public void levelUp()
