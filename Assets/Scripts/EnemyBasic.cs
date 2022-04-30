@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class EnemyBasic : MonoBehaviour
 {
+    private StorageSystem storageSystem;
     public enum DmgType{
         Physical, 
         Anti_Liquid,
@@ -14,7 +15,7 @@ public class EnemyBasic : MonoBehaviour
     public float hp = 100;
     public int speed = 20;
     public float dmg = 10;
-    private int moneyReward = 10;
+    public int coinsReward = 10;
     public DmgType dmgType = DmgType.Physical;
     private int counter = 0;
 
@@ -23,6 +24,7 @@ public class EnemyBasic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        storageSystem = GameObject.FindGameObjectWithTag("StorageSystem").GetComponent<StorageSystem>();
         blockSize = GameObject.FindGameObjectWithTag("Block").GetComponent<SpriteRenderer>().bounds.size.x;
     }
 
@@ -40,6 +42,13 @@ public class EnemyBasic : MonoBehaviour
         }
     }
 
+    void Die()
+    {
+        storageSystem.EarnCoins(coinsReward);
+        print("money?");
+        Destroy(gameObject);
+    }
+
     void OnCollisionEnter2D (Collision2D col)
     {
         if (col.gameObject.tag == "Block")
@@ -51,7 +60,7 @@ public class EnemyBasic : MonoBehaviour
                 print("dmg =" + col.gameObject.GetComponent<Particle>().FallHitDmg());
                 print("hp =" + hp);
                 if (hp < 0)
-                    Destroy(gameObject);
+                    Die();
             }
             else //he attac
             {

@@ -14,12 +14,13 @@ public class Particle : MonoBehaviour
     public int wet = 0; // 0..100 to determine how wet smth is
     public int density = 75; // 0..100 to determine whether it should go up or down
     public int speed; //how fast it falls TO DO
-    public int gravity = 1; //1 -> afecta gravetat a l'invers; 0 -> no afecta gravetat; -1 -> l'afecta la gravetat
+    public int gravity = -1; //1 -> afecta gravetat a l'invers; 0 -> no afecta gravetat; -1 -> l'afecta la gravetat
     public int damage = 0; //0..100 -> contact dmg
     public bool isFluid = false;
-    public bool isSand = false;
     private float fallDmgFactor; //0..5 -> multiplies the fall dmg when it falls on an enemy
     private bool iscoll;
+    private bool iscollRight;
+    private bool iscollLeft;
     private float movesize;
     private int fallenBlocks = 0;
     private bool enemyHit = false;
@@ -43,6 +44,7 @@ public class Particle : MonoBehaviour
 
     void FixedUpdate()
     {
+        Vector2 originalPos = transform.position;
         if (gravity == 1 && !iscoll) { //falling up
             transform.position = new Vector2(transform.position.x, transform.position.y + movesize);
         }
@@ -53,6 +55,32 @@ public class Particle : MonoBehaviour
             //transform.position = mat.getRealPos(new Vector2(transform.position.x, transform.position.y - movesize), movesize);
             mat.setPos(transform.position, "sand");
             fallenBlocks++;
+        }
+        else if (isFluid && gravity == -1 && iscoll)
+        {
+            print("moving to the side");
+            int select = Random.Range(0,2);
+            if (select == 0)
+            {
+                if (!iscollLeft)
+                    transform.position = new Vector2(transform.position.x - movesize, transform.position.y);
+            }
+            else
+            {
+                if (!iscollRight)
+                    transform.position = new Vector2(transform.position.x + movesize, transform.position.y);
+            }
+        }
+
+        if (transform.position.x < -5.5f || transform.position.x > 6f)
+        {
+            transform.position = new Vector2(originalPos.x, transform.position.y);
+        }
+        
+        if (transform.position.y < -3.2f)
+        {
+            transform.position = new Vector2(transform.position.x, originalPos.y);
+            iscoll = true;
         }
     }
 
@@ -84,6 +112,16 @@ public class Particle : MonoBehaviour
             if (mat.DownIsEmpty(transform.position))
                 iscoll = false;
         }
+    }
+
+    public void IsCollidingRight(bool iscollRight)
+    {
+        this.iscollRight = iscollRight;
+    }
+
+    public void IsCollidingLeft (bool iscollLeft)
+    {
+        this.iscollLeft = iscollLeft;
     }
 
     public void EnemyHit()

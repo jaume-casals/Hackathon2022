@@ -34,6 +34,7 @@ public class ParticleGenerator : MonoBehaviour
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         if (IsMouseOverGameWindow)
         {
+            worldPosition = new Vector3(((float)(((int)(worldPosition.x*100)/8)*8)/100), ((float)(((int)(worldPosition.y*100)/8)*8)/100) , worldPosition.z);
             if (storageSystem.GetComponent<StorageSystem>().UsedBlock(particle.GetComponent<Particle>().getName()))
             {
                 Vector2 matrixPos = matrix.GetComponent<matrix>().getRealPos(new Vector2(worldPosition.x, worldPosition.y), 0.08f);
