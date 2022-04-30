@@ -34,8 +34,9 @@ public class ControlVida : MonoBehaviour
         slot3.GetComponent<slotVidaControl>().inicialitza(vida3);
     }
 
-    private void GameOver() {
+    private IEnumerator GameOver() {
         print("GAME OVER");
+        yield return new WaitForSeconds(2);
         GameOverText.GetComponent<Text>().text = "Game Over!";
         GameOverText.SetActive(true);
         Time.timeScale = 0;
@@ -46,7 +47,7 @@ public class ControlVida : MonoBehaviour
         else if (vida == 2) slot2.GetComponent<slotVidaControl>().hit();
         else {
             slot1.GetComponent<slotVidaControl>().hit();
-            GameOver();
+            StartCoroutine(GameOver());
         }
         vida -= 1;
     }

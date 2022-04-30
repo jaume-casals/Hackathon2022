@@ -25,7 +25,11 @@ public class EnemyBasic : MonoBehaviour
     void Start()
     {
         storageSystem = GameObject.FindGameObjectWithTag("StorageSystem").GetComponent<StorageSystem>();
-        blockSize = GameObject.FindGameObjectWithTag("Block").GetComponent<SpriteRenderer>().bounds.size.x;
+
+
+
+
+        blockSize = 0.08f;//GameObject.FindGameObjectWithTag("Block").GetComponent<SpriteRenderer>().bounds.size.x;
     }
 
     // Update is called once per frame
