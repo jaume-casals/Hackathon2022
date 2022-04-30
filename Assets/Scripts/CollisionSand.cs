@@ -19,6 +19,13 @@ public class CollisionSand : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        block_script.IsColliding(true);
+        if (other.gameObject.tag == "Enemy")
+        {
+            block_script.EnemyHit();
+        }
+        else
+        {    
+            block_script.IsColliding(true);
+        }
     }
 }

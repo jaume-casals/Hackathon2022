@@ -128,9 +128,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heat: 0
   wet: 0
-  density: 0
+  density: 75
   speed: 0
   gravity: -1
+  damage: 0
 --- !u!50 &6510885308606126715
 Rigidbody2D:
   serializedVersion: 4
