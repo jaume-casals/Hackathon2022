@@ -9,6 +9,7 @@ public class ParticleGenerator : MonoBehaviour
     private string type = "lava";
     public GameObject sand;
     public GameObject lava;
+    public GameObject stone;
     public GameObject storageSystem;
     public int speed = 20;
     private int frameCounter = 0;
@@ -29,6 +30,9 @@ public class ParticleGenerator : MonoBehaviour
                     break;
                 case "lava":
                     GenerateParticle(lava);
+                    break;
+                case "stone":
+                    GenerateParticle(stone);
                     break;
                 default:
                     break;
