@@ -6,8 +6,9 @@ using UnityEngine;
 
 public class ParticleGenerator : MonoBehaviour
 {
-
-    public GameObject particle;
+    private string type;
+    public GameObject sand;
+    public GameObject lava;
     public GameObject storageSystem;
     public int speed = 20;
     private int frameCounter = 0;
@@ -23,8 +24,17 @@ public class ParticleGenerator : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            print("pressed_mouse");
-            GenerateParticle(particle);
+            switch(type) {
+                case "sand":
+                    GenerateParticle(sand);
+                    break;
+                case "lava":
+                    GenerateParticle(lava);
+                    break;
+                default:
+                    break;
+            }
+            
             
         }
     }
@@ -49,5 +59,9 @@ public class ParticleGenerator : MonoBehaviour
         { 
             return !(0 > Input.mousePosition.x || 0 > Input.mousePosition.y || Screen.width < Input.mousePosition.x || Screen.height < Input.mousePosition.y); 
         } 
+    }
+
+    public void swaptype(string newtype) {
+        type = newtype;
     }
 }

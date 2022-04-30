@@ -22,7 +22,6 @@ public class TestSandGenerator : MonoBehaviour
             Vector2 pos = MatrixGameObject.GetComponent<matrix>().getRealPos(transform.position, 0.08f);
             Instantiate(SandBlock, pos, transform.rotation);
             SandBlock.GetComponent<Particle>().MatrixGameObject = MatrixGameObject;
-            SandBlock.GetComponent<Particle>().isSand = true;
         }
 
         if (Input.GetKeyDown(KeyCode.LeftArrow))

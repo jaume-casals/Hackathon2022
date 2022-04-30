@@ -95,23 +95,6 @@ public class Particle : MonoBehaviour
 
         iscoll = isColl;
         fallenBlocks = 0;
-
-        int dir = 0;
-        //if (isFluid && gravity == -1) dir = mat.searchNearbyHoleDownwards(transform.position);
-        if (isFluid && gravity == 1) dir = mat.searchNearbyHoleUpwards(transform.position);
-
-       
-        if (isSand) dir = mat.searchSandHole(transform.position);
-        
-        
-        if (dir != 0)
-        {
-            if (isSand) mat.setPos(transform.position, "empty");
-            transform.position = new Vector2(transform.position.x + dir*movesize, transform.position.y);
-            if (isSand) mat.setPos(transform.position, "sand");
-            if (mat.DownIsEmpty(transform.position))
-                iscoll = false;
-        }
     }
 
     public void IsCollidingRight(bool iscollRight)
