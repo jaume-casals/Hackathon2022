@@ -8,9 +8,11 @@ public class StorageSystem : MonoBehaviour
 {
     public Text sandcountertest;
     public Text lavacountertest;
+    public Text stonecountertest;
     public Text coinsText;
     private int sandBlocks = 0;
     private int lavaBlocks = 0;
+    private int stoneBlocks = 0;
 
     private int coins = 0;
     // Start is called before the first frame update
@@ -21,8 +23,10 @@ public class StorageSystem : MonoBehaviour
 
         sandBlocks = 1000;
         lavaBlocks = 1000;
+        stoneBlocks = 1000;
         sandcountertest.GetComponent<Text>().text = sandBlocks.ToString();
         lavacountertest.GetComponent<Text>().text = lavaBlocks.ToString();
+        stonecountertest.GetComponent<Text>().text = stoneBlocks.ToString();
     }
 
     // Update is called once per frame
@@ -66,6 +70,12 @@ public class StorageSystem : MonoBehaviour
                 lavaBlocks--;
                 lavacountertest.GetComponent<Text>().text = lavaBlocks.ToString();
                 break;
+            case "stone":
+                if (stoneBlocks <= 0)
+                    return false;
+                stoneBlocks--;
+                stonecountertest.GetComponent<Text>().text = stoneBlocks.ToString();
+                break;
             default:
                 break;
         }
@@ -84,6 +94,10 @@ public class StorageSystem : MonoBehaviour
             case "lava":
                 lavaBlocks++;
                 lavacountertest.GetComponent<Text>().text = lavaBlocks.ToString();
+                break;
+            case "stone":
+                stoneBlocks++;
+                stonecountertest.GetComponent<Text>().text = stoneBlocks.ToString();
                 break;
             default:
                 break;
