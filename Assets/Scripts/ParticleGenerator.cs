@@ -36,7 +36,7 @@ public class ParticleGenerator : MonoBehaviour
         {
             if (storageSystem.GetComponent<StorageSystem>().UsedBlock(particle.GetComponent<Particle>().getName()))
             {
-                Vector2 matrixPos = matrix.GetComponent<matrix>().getRealPos(new Vector2(worldPosition.x, worldPosition.y), particle.GetComponent<SpriteRenderer>().bounds.size.x, particle.GetComponent<SpriteRenderer>().bounds.size.y);
+                Vector2 matrixPos = matrix.GetComponent<matrix>().getRealPos(new Vector2(worldPosition.x, worldPosition.y));
                 Instantiate(particle, new Vector3(matrixPos.x, matrixPos.y, worldPosition.z), transform.rotation);
             }
         }
