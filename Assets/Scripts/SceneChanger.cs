@@ -17,10 +17,10 @@ public class SceneChanger : MonoBehaviour
         
     }
 
-    public void ChangeScene(int index)
+    public void ChangeScene(string newscene)
 	{
         Debug.Log("a");
-		SceneManager.LoadScene (index);
+		SceneManager.LoadScene (newscene);
 	}
 
 	public void Exit()
