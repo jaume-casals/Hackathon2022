@@ -671,7 +671,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.07292772, b: 0.5943396, a: 1}
+  m_Color: {r: 0.59607846, g: 0, b: 0.07058824, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -691,7 +691,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Water Blocks : '
+  m_Text: 'Lava Blocks : '
 --- !u!222 &495933438
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1567,7 +1567,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7130b7a965889d339ed3509d2363a3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sand: {fileID: 0}
+  sand: {fileID: 1276065808}
   lava: {fileID: 0}
   storageSystem: {fileID: 1949362022}
   speed: 20
@@ -1782,7 +1782,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -316.25003, y: 265}
+  m_AnchoredPosition: {x: -320.25, y: 265}
   m_SizeDelta: {x: 200, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1104433127
@@ -1856,7 +1856,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelText: {fileID: 1055428851}
-  type: sand
+  type: lava
   speed: 20
   speedGain: 5
   price: 10
@@ -1975,6 +1975,11 @@ MonoBehaviour:
           m_StringArgument: lava
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &1276065808 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 727715984963740857, guid: de2d0eca5e1d5963ea033911c9070af9, type: 3}
+  m_PrefabInstance: {fileID: 727715985379210883}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1385917281
 GameObject:
   m_ObjectHideFlags: 0
@@ -2055,6 +2060,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1385917281}
   m_CullTransparentMesh: 1
+--- !u!1001 &1390269538
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3790949050811963067, guid: aa4ec54e0dbc28a6c81b04b13e178731, type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 3790949050811963067, guid: aa4ec54e0dbc28a6c81b04b13e178731, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3790949050811963067, guid: aa4ec54e0dbc28a6c81b04b13e178731, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3790949050811963067, guid: aa4ec54e0dbc28a6c81b04b13e178731, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3790949050811963067, guid: aa4ec54e0dbc28a6c81b04b13e178731, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3790949050811963067, guid: aa4ec54e0dbc28a6c81b04b13e178731, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3790949050811963067, guid: aa4ec54e0dbc28a6c81b04b13e178731, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3790949050811963067, guid: aa4ec54e0dbc28a6c81b04b13e178731, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3790949050811963067, guid: aa4ec54e0dbc28a6c81b04b13e178731, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3790949050811963067, guid: aa4ec54e0dbc28a6c81b04b13e178731, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3790949050811963067, guid: aa4ec54e0dbc28a6c81b04b13e178731, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3790949050811963071, guid: aa4ec54e0dbc28a6c81b04b13e178731, type: 3}
+      propertyPath: m_Name
+      value: Lava_Block
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aa4ec54e0dbc28a6c81b04b13e178731, type: 3}
 --- !u!1 &1697026098
 GameObject:
   m_ObjectHideFlags: 0
@@ -2290,7 +2352,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1761903559
 Transform:
   m_ObjectHideFlags: 0
@@ -2456,7 +2518,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.07450981, b: 0.59607846, a: 1}
+  m_Color: {r: 0.59607846, g: 0, b: 0.07054221, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

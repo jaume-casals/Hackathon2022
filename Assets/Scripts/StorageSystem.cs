@@ -7,8 +7,10 @@ using UnityEngine.UI;
 public class StorageSystem : MonoBehaviour
 {
     public Text sandcountertest;
+    public Text lavacountertest;
     public Text coinsText;
     private int sandBlocks = 0;
+    private int lavaBlocks = 0;
 
     private int coins = 0;
     // Start is called before the first frame update
@@ -18,7 +20,9 @@ public class StorageSystem : MonoBehaviour
         coinsText.GetComponent<Text>().text = coins.ToString();
 
         sandBlocks = 1000;
+        lavaBlocks = 1000;
         sandcountertest.GetComponent<Text>().text = sandBlocks.ToString();
+        lavacountertest.GetComponent<Text>().text = lavaBlocks.ToString();
     }
 
     // Update is called once per frame
@@ -56,6 +60,12 @@ public class StorageSystem : MonoBehaviour
                 sandBlocks--;
                 sandcountertest.GetComponent<Text>().text = sandBlocks.ToString();
                 break;
+            case "lava":
+                if (lavaBlocks <= 0)
+                    return false;
+                lavaBlocks--;
+                lavacountertest.GetComponent<Text>().text = lavaBlocks.ToString();
+                break;
             default:
                 break;
         }
@@ -70,6 +80,10 @@ public class StorageSystem : MonoBehaviour
             case "sand":
                 sandBlocks++;
                 sandcountertest.GetComponent<Text>().text = sandBlocks.ToString();
+                break;
+            case "lava":
+                lavaBlocks++;
+                lavacountertest.GetComponent<Text>().text = lavaBlocks.ToString();
                 break;
             default:
                 break;
