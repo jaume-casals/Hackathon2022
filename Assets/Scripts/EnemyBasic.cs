@@ -14,7 +14,7 @@ public class EnemyBasic : MonoBehaviour
     public float hp = 100;
     public int speed = 20;
     public float dmg = 10;
-
+    private int moneyReward = 10;
     public DmgType dmgType = DmgType.Physical;
     private int counter = 0;
 

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Particle : MonoBehaviour
 {
+    public string name = "sand"; //name in lower case
     public int health = 100; //100 base, can be modified
     public int heat = 0; // 0..100 to determine how hot smth is
     public int wet = 0; // 0..100 to determine how wet smth is
@@ -13,13 +14,9 @@ public class Particle : MonoBehaviour
     public int damage = 0; //0..100 -> contact dmg
     private float fallDmgFactor; //0..5 -> multiplies the fall dmg when it falls on an enemy
     private bool iscoll;
-
     private float movesize;
-
     private int fallenBlocks = 0;
-
     private bool enemyHit = false;
-
     private bool dieInPeace = false;
 
     // Start is called before the first frame update
@@ -47,6 +44,11 @@ public class Particle : MonoBehaviour
             transform.position = new Vector2(transform.position.x, transform.position.y - movesize);
             fallenBlocks++;
         }
+    }
+
+    public string getName()
+    {
+        return name;
     }
 
     public void IsColliding(bool isColl)

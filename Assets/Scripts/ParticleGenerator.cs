@@ -8,7 +8,7 @@ public class ParticleGenerator : MonoBehaviour
 {
 
     public GameObject particle;
-
+    public GameObject storageSystem;
     public int speed = 20;
     private int frameCounter = 0;
     // Start is called before the first frame update
@@ -28,12 +28,15 @@ public class ParticleGenerator : MonoBehaviour
         }
     }
 
-    private void GenerateParticle(GameObject particle)
+    private void GenerateParticle(GameObject particle) //tell storage particle used and place particle on mouse position
     {
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         if (IsMouseOverGameWindow)
         {
-            Instantiate(particle, worldPosition, transform.rotation);
+            if (storageSystem.GetComponent<StorageSystem>().UsedBlock(particle.GetComponent<Particle>().getName()))
+            {
+                Instantiate(particle, worldPosition, transform.rotation);
+            }
         }
     }
 
