@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class ParticleGenerator : MonoBehaviour
 {
-    private string type = "lava";
+    private string type = "sand";
     public GameObject sand;
     public GameObject lava;
     public GameObject stone;

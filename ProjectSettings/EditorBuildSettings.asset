@@ -8,22 +8,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: a0fcea949440157dcba0d96ebe074bf7
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Definitive.unity
     guid: b412de0fe71e7f247a99f5234e723ca2
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/alex.unity
     guid: 226bde9dd8921ecb19608b210a20d2f9
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/copia.unity
     guid: 217453de4d3cddbcf9e988e813a6776e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Robo a mano armada.unity
     guid: df1066bef4b5ee76ea1f9050332c303e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SceneHolaholita.unity
     guid: e79bc1561a6bb8595960bfc8834e0298
   - enabled: 1

@@ -8,8 +8,8 @@ public class Factory : MonoBehaviour
     public Text levelText;
     private StorageSystem storageSystem;
     public string type = "sand";
-    public int speed = 20;
-    public int speedGain = 5;
+    public int speed = 10;
+    public int speedGain = 2;
     public int price = 10;
     public int level = 0;
     private int frameCounter = 0;
