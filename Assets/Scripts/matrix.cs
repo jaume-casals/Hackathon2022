@@ -98,9 +98,8 @@ public class matrix : MonoBehaviour
         return 0;
     }
 
-    public Vector2 getRealPos(Vector2 pos) {
-        Vector2 norm = new Vector2((pos.x - iniPos.x) / 0.08f, (pos.y - iniPos.y) / 0.08f);
-
-        return (new Vector2(iniPos.x + norm.x, iniPos.y + norm.y));
+    public Vector2 getRealPos(Vector2 pos, float szbl) {
+        Vector2 norm = new Vector2((int) ((pos.x - iniPos.x) / szbl), (int) ((pos.y - iniPos.y) / szbl));
+        return new Vector2(norm.x * szbl, norm.y * szbl);
     }
 }
