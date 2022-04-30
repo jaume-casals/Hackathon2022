@@ -15,6 +15,8 @@ public class Particle : MonoBehaviour
     public bool isFluid = false;
     private float fallDmgFactor; //0..5 -> multiplies the fall dmg when it falls on an enemy
     private bool iscoll;
+    private bool iscollRight;
+    private bool iscollLeft;
     private float movesize;
     private int fallenBlocks = 0;
     private bool enemyHit = false;
@@ -49,12 +51,25 @@ public class Particle : MonoBehaviour
         }
         else if (isFluid && gravity == -1 && iscoll)
         {
-            transform.position = new Vector2(transform.position.x + Random.Range(-1,2)*movesize, transform.position.y);
+            print("moving to the side");
+            int select = Random.Range(0,2);
+            if (select == 0)
+            {
+                if (!iscollLeft)
+                    transform.position = new Vector2(transform.position.x - movesize, transform.position.y);
+            }
+            else
+            {
+                if (!iscollRight)
+                    transform.position = new Vector2(transform.position.x + movesize, transform.position.y);
+            }
         }
-        if (gameObject.GetComponent<Collider2D>().IsTouchingLayers(Physics2D.AllLayers) == true)
+
+        if (transform.position.x < -5.5f || transform.position.x > 6f)
         {
             transform.position = new Vector2(originalPos.x, transform.position.y);
         }
+        
         if (transform.position.y < -3.2f)
         {
             transform.position = new Vector2(transform.position.x, originalPos.y);
@@ -71,6 +86,16 @@ public class Particle : MonoBehaviour
     {
         iscoll = isColl;
         fallenBlocks = 0;
+    }
+
+    public void IsCollidingRight(bool iscollRight)
+    {
+        this.iscollRight = iscollRight;
+    }
+
+    public void IsCollidingLeft (bool iscollLeft)
+    {
+        this.iscollLeft = iscollLeft;
     }
 
     public void EnemyHit()
