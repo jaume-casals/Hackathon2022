@@ -1,6 +1,3 @@
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Particle : MonoBehaviour
@@ -8,7 +5,7 @@ public class Particle : MonoBehaviour
     public GameObject MatrixGameObject;
     private matrix mat;
 
-    public string name = "sand"; //name in lower case
+    public new string name = "sand"; //name in lower case
     public int health = 100; //100 base, can be modified
     public int heat = 0; // 0..100 to determine how hot smth is
     public int wet = 0; // 0..100 to determine how wet smth is
@@ -32,7 +29,6 @@ public class Particle : MonoBehaviour
         fallDmgFactor = Mathf.Max(0,5*((float)(density-50)/50f)); // de 0 a 5 en funcio de la densitat
         iscoll = false;
         movesize = gameObject.GetComponent<SpriteRenderer>().bounds.size.x;
-        mat = MatrixGameObject.GetComponent<matrix>();
     }
 
     // Update is called once per frame
@@ -50,10 +46,7 @@ public class Particle : MonoBehaviour
         }
 
         if (gravity == -1 && !iscoll) { //falling down
-            mat.setPos(transform.position, "empty");
             transform.position = new Vector2(transform.position.x, transform.position.y - movesize);
-            //transform.position = mat.getRealPos(new Vector2(transform.position.x, transform.position.y - movesize), movesize);
-            mat.setPos(transform.position, "sand");
             fallenBlocks++;
         }
         else if (isFluid && gravity == -1 && iscoll)
@@ -111,7 +104,10 @@ public class Particle : MonoBehaviour
     {
         enemyHit = true;
     }
-
+    public int GetDmg()
+    {
+        return damage;
+    }
     public float FallHitDmg()
     {
         float dmg = fallenBlocks*fallDmgFactor;
