@@ -181,6 +181,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &435736541 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8478975603047957786, guid: bb5a8e0a7db71bbc0b15e609c99d52db, type: 3}
+  m_PrefabInstance: {fileID: 8478975603481546393}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &577380735
 GameObject:
   m_ObjectHideFlags: 0
@@ -258,6 +263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SandBlock: {fileID: 727715984963740857, guid: de2d0eca5e1d5963ea033911c9070af9, type: 3}
   space: 0
+  MatrixGameObject: {fileID: 435736541}
 --- !u!4 &1379354176
 Transform:
   m_ObjectHideFlags: 0
@@ -417,6 +423,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8478975603047957789, guid: bb5a8e0a7db71bbc0b15e609c99d52db, type: 3}
+      propertyPath: sandBlock
+      value: 
+      objectReference: {fileID: 727715984963740857, guid: de2d0eca5e1d5963ea033911c9070af9, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb5a8e0a7db71bbc0b15e609c99d52db, type: 3}
 --- !u!1001 &8828774467024292643
@@ -426,6 +436,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8828774465809153908, guid: d86851b8344f5812f8d7da3e4ada658b, type: 3}
+      propertyPath: gravity
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8828774465809153908, guid: d86851b8344f5812f8d7da3e4ada658b, type: 3}
+      propertyPath: isFluid
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8828774465809153908, guid: d86851b8344f5812f8d7da3e4ada658b, type: 3}
+      propertyPath: MatrixGameObject
+      value: 
+      objectReference: {fileID: 435736541}
     - target: {fileID: 8828774465809153909, guid: d86851b8344f5812f8d7da3e4ada658b, type: 3}
       propertyPath: m_RootOrder
       value: 2

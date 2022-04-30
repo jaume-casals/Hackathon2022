@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -98,8 +99,39 @@ public class matrix : MonoBehaviour
         return 0;
     }
 
+    public int searchSandHole(Vector2 pos) {
+        int x = (int) ((pos.x - iniPos.x) / block_size);
+        int y = (int) ((pos.y - iniPos.y) / block_size);
+        print("y");
+        print(y);
+
+        if (y == 0) return 0;
+        if (map[x, y-1] == "sand") {
+            print("BELOW SAND!");
+            if (x > 0 && map[x-1, y-1] == "empty" && x < sizeX && map[x+1, y-1] == "empty") {
+                int rand = UnityEngine.Random.Range(1, 6);
+                return (int) MathF.Pow(-1, rand); //Retorna aleatoriament -1 o 1
+            }
+            else if (x > 0 && map[x-1, y-1] == "empty") { //ESQUERRA
+                return -1;
+            }
+            else if (x < sizeX && map[x+1, y-1] == "empty") { //DRETA
+                return 1;
+            }
+        }
+        print(map[x, y-1]);
+        return 0;
+    }
+
+
     public Vector2 getRealPos(Vector2 pos, float szbl) {
         Vector2 norm = new Vector2((int) ((pos.x - iniPos.x) / szbl), (int) ((pos.y - iniPos.y) / szbl));
         return new Vector2(norm.x * szbl, norm.y * szbl);
+    }
+
+    public bool DownIsEmpty(Vector2 pos) {
+        int x = (int) ((pos.x - iniPos.x) / block_size);
+        int y = (int) ((pos.y - iniPos.y) / block_size);
+        return (map[x, y-1] == "empty");
     }
 }

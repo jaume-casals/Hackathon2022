@@ -1,9 +1,13 @@
+using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Particle : MonoBehaviour
 {
+    public GameObject MatrixGameObject;
+    private matrix mat;
+
     public string name = "sand"; //name in lower case
     public int health = 100; //100 base, can be modified
     public int heat = 0; // 0..100 to determine how hot smth is
@@ -12,20 +16,22 @@ public class Particle : MonoBehaviour
     public int speed; //how fast it falls TO DO
     public int gravity = 1; //1 -> afecta gravetat a l'invers; 0 -> no afecta gravetat; -1 -> l'afecta la gravetat
     public int damage = 0; //0..100 -> contact dmg
+    public bool isFluid = false;
+    public bool isSand = false;
     private float fallDmgFactor; //0..5 -> multiplies the fall dmg when it falls on an enemy
     private bool iscoll;
     private float movesize;
     private int fallenBlocks = 0;
     private bool enemyHit = false;
     private bool dieInPeace = false;
-
-    // Start is called before the first frame update
+ 
+    // Start is called before the first frame update 
     void Start()
     {
         fallDmgFactor = Mathf.Max(0,5*((float)(density-50)/50f)); // de 0 a 5 en funcio de la densitat
         iscoll = false;
         movesize = gameObject.GetComponent<SpriteRenderer>().bounds.size.x;
-        //pos = new Vector2(25,25);
+        mat = MatrixGameObject.GetComponent<matrix>();
     }
 
     // Update is called once per frame
@@ -41,8 +47,11 @@ public class Particle : MonoBehaviour
             transform.position = new Vector2(transform.position.x, transform.position.y + movesize);
         }
 
-        else if (gravity == -1 && !iscoll) { //falling down
+        if (gravity == -1 && !iscoll) { //falling down
+            mat.setPos(transform.position, "empty");
             transform.position = new Vector2(transform.position.x, transform.position.y - movesize);
+            //transform.position = mat.getRealPos(new Vector2(transform.position.x, transform.position.y - movesize), movesize);
+            mat.setPos(transform.position, "sand");
             fallenBlocks++;
         }
     }
@@ -54,8 +63,27 @@ public class Particle : MonoBehaviour
 
     public void IsColliding(bool isColl)
     {
+        //Si es aigua si que pot caure
+
         iscoll = isColl;
         fallenBlocks = 0;
+
+        int dir = 0;
+        //if (isFluid && gravity == -1) dir = mat.searchNearbyHoleDownwards(transform.position);
+        if (isFluid && gravity == 1) dir = mat.searchNearbyHoleUpwards(transform.position);
+
+       
+        if (isSand) dir = mat.searchSandHole(transform.position);
+        
+        
+        if (dir != 0)
+        {
+            if (isSand) mat.setPos(transform.position, "empty");
+            transform.position = new Vector2(transform.position.x + dir*movesize, transform.position.y);
+            if (isSand) mat.setPos(transform.position, "sand");
+            if (mat.DownIsEmpty(transform.position))
+                iscoll = false;
+        }
     }
 
     public void EnemyHit()
