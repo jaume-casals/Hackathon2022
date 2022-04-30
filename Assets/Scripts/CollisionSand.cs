@@ -28,4 +28,9 @@ public class CollisionSand : MonoBehaviour
             block_script.IsColliding(true);
         }
     }
+    private void OnTriggerExit2D(Collider2D other) 
+    {
+        if (!(other.gameObject.tag == "Enemy"))
+            block_script.IsColliding(false);
+    }
 }

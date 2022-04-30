@@ -10,8 +10,9 @@ public class Particle : MonoBehaviour
     public int wet = 0; // 0..100 to determine how wet smth is
     public int density = 75; // 0..100 to determine whether it should go up or down
     public int speed; //how fast it falls TO DO
-    public int gravity = 1; //1 -> afecta gravetat a l'invers; 0 -> no afecta gravetat; -1 -> l'afecta la gravetat
+    public int gravity = -1; //1 -> afecta gravetat a l'invers; 0 -> no afecta gravetat; -1 -> l'afecta la gravetat
     public int damage = 0; //0..100 -> contact dmg
+    public bool isFluid = false;
     private float fallDmgFactor; //0..5 -> multiplies the fall dmg when it falls on an enemy
     private bool iscoll;
     private float movesize;
@@ -37,6 +38,7 @@ public class Particle : MonoBehaviour
 
     void FixedUpdate()
     {
+        Vector2 originalPos = transform.position;
         if (gravity == 1 && !iscoll) { //falling up
             transform.position = new Vector2(transform.position.x, transform.position.y + movesize);
         }
@@ -44,6 +46,19 @@ public class Particle : MonoBehaviour
         else if (gravity == -1 && !iscoll) { //falling down
             transform.position = new Vector2(transform.position.x, transform.position.y - movesize);
             fallenBlocks++;
+        }
+        else if (isFluid && gravity == -1 && iscoll)
+        {
+            transform.position = new Vector2(transform.position.x + Random.Range(-1,2)*movesize, transform.position.y);
+        }
+        if (gameObject.GetComponent<Collider2D>().IsTouchingLayers(Physics2D.AllLayers) == true)
+        {
+            transform.position = new Vector2(originalPos.x, transform.position.y);
+        }
+        if (transform.position.y < -3.2f)
+        {
+            transform.position = new Vector2(transform.position.x, originalPos.y);
+            iscoll = true;
         }
     }
 
