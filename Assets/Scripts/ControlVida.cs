@@ -59,7 +59,7 @@ public class ControlVida : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            SceneManager.LoadScene("Definitive");
+            SceneManager.LoadScene("REAL_DEF");
         }
     }
 }

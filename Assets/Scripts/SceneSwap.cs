@@ -9,9 +9,9 @@ public class SceneSwap : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print(pointing);
+        print(Input.GetMouseButtonDown(0));
         if (Input.GetMouseButtonDown(0) && pointing) {
-            SceneManager.LoadScene("Definitive");
+            SceneManager.LoadScene("REAL_DEF");
         }
     }
 
